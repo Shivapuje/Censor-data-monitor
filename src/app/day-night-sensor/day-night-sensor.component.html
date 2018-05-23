@@ -1,0 +1,39 @@
+<div class="ui stackable grid">
+  <div class="two column row">
+    <div class="middle aligned center aligned column">
+      <h1>
+        Intelligent Street Light Controller
+      </h1>
+      <p>Automatically switches the street lights based on based day time or night time</p>
+    </div>
+
+    <div class="center aligned column">
+      <div class="ui segment">
+        <i class="huge {{channelFeed.feeds[0].field3 > 50? 'loading yellow sun': 'moon'}} icon"></i>
+        <h2>{{channelFeed.feeds[0].field3 > 50? 'It\'s day time': 'It\'s Night time'}}</h2>
+        <p> {{channelFeed.feeds[0].field3 > 50? 'So street lights are OFF!': 'So the Street lights are ON!'}} </p>
+      </div>
+    </div>
+  </div>
+  <div class="two column row">
+    <div class="column">
+      <div class="ui center aligned sub header">Analysis</div>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/462880/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+      </iframe>
+    </div>
+    <div class="center aligned column">
+      <div class="ui statistic">
+        <div class="label">
+          Latest sensor value
+        </div>
+        <div class="value">
+          {{channelFeed.feeds[0].field3}}
+        </div>
+      </div>
+      <!-- <div class="ui segment">
+        <div class="ui dividing sub header">Previous values</div>
+      </div> -->
+    </div>
+
+  </div>
+</div>
